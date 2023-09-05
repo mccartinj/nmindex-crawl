@@ -1,0 +1,3 @@
+# nmindex-crawl
+
+This is a crawler that starts with an initial list of homepage links from the New Models Galaxy (https://docs.google.com/spreadsheets/d/1S7ZMMeO8ApMWf2MLjRnl3Wz46af09CYd2Adqd6ttCro/edit#gid=0). On each page it encounters, it saves the text content of the page to a table called "pages" and saves all the links to a table called "links"—both in a Postgres database. If the links are in the New Models Galaxy, they are marked as such. On the next pass and each subsequent pass, the crawler pulls a list of links from the "links" table, limited to those in the New Models Galaxy, it saves the contents of those links to pages, and it gather new links from those pages.
